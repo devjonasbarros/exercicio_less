@@ -1,0 +1,183 @@
+// Importação das variaveis de cores usadas no projeto
+@import "variaveis.less";
+
+// Importação dos mapas de cores 
+@import "mapas.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+}
+
+li {
+    list-style: none;
+
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+        // Usando escapings no projeto
+    @media @breakpointMobile{
+        
+        .produto{
+            text-align: center;
+
+            // Usando cores de mapas 
+            color: #colors[corTituloProduto];
+            opacity: 0.7;
+            font-size: 25px;
+            margin-bottom: 10px;
+
+            &:hover{
+                color: blue;
+                cursor: pointer;
+                font-size: 30px;
+            }
+        }
+        display: block;
+            }
+
+    
+
+}
+
+header {
+        // Usando variaveis nas cores 
+    background-color: @corDeFundoHeader;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+
+}
+
+
+    // Usando escapings no projeto
+    @media @breakpointMobile{    
+        
+        .menu{
+            justify-content: center;
+                    // Usando variaveis nas cores 
+            color: @corMobile;
+        }
+
+        .imagemHeader{
+            margin-left: 160px;
+        }
+
+    
+        display: block;
+        
+            }
+
+
+.menu {
+    display: flex;
+    
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: @corDosTextos;
+    text-decoration: none;
+
+    &:hover{
+                opacity: 0.7;
+                font-style: oblique;
+                font-size: 18px;
+                    transform: scale3d(1.5);
+    }
+        
+    
+        }
+
+section {
+    padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+
+        // Usando escapings no projeto
+
+    @media @breakpointMobile{        
+    
+        display: block;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        padding: 10px;;
+            }
+
+
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: #44bd32;
+            // Usando variaveis nas cores 
+    color: @corDosBotoes;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.product-button:hover {
+    background-color: #4cd137;
+}
+
+// @media screen and (max-width: 1023px) {
+//     .container {
+//         max-width: 80%;
+//     }
+
+//     .products {
+//         grid-template-columns: repeat(2, 48.5%);
+//         column-gap: 3%;
+//     }
+// }
+
+// @media screen and (max-width: 767px) {
+//     .products {
+//         display: block;
+//     }
+
+//     .product-item  {
+//         margin-bottom: 32px;
+//     }
+// }
